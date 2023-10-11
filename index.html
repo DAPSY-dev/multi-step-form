@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Wizard</title>
+    <link rel="stylesheet" href="./de-reboot.css">
+    <link rel="stylesheet" href="./main.css">
+    <script>
+      document.documentElement.classList.remove('no-js')
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Form Wizard</h1>
+
+      <form action="#" method="get" class="form-wizard js-form-wizard" data-id="form_wizard_01">
+        <fieldset class="form-wizard__step js-form-wizard-step">
+          <legend>Basic information</legend>
+          <input type="text" name="first_name" placeholder="First name" aria-label="First name">
+          <input type="text" name="last_name" placeholder="Last name" aria-label="Last name">
+        </fieldset>
+
+        <fieldset class="form-wizard__step js-form-wizard-step">
+          <legend>Contacts</legend>
+          <input type="email" name="email" placeholder="Email" aria-label="Email">
+        </fieldset>
+
+        <fieldset class="form-wizard__step js-form-wizard-step">
+          <legend>Terms</legend>
+          <input type="checkbox" name="terms" id="terms_01">
+          <label for="terms_01">Agree with <a href="#">terms</a></label>
+        </fieldset>
+
+        <div class="js-form-wizard-percentage"></div>
+
+        <button type="button" class="form-wizard__control js-form-wizard-back">Back</button>
+        <button type="button" class="form-wizard__control js-form-wizard-next">Next</button>
+        <button type="submit" class="form-wizard__control js-form-wizard-submit">Submit</button>
+      </form>
+    </div>
+
+    <script src="./form-wizard.js" defer></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const formWizardEl = document.querySelector('.js-form-wizard')
+        const formWizardObj = new FormWizard(formWizardEl)
+        // formWizardObj.setActiveStep(1)
+        // formWizardObj.validStep = (stepHTML) => {
+        //   console.log(stepHTML)
+        //   return false
+        // }
+      })
+    </script>
+  </body>
+</html>
